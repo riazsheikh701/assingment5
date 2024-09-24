@@ -1,0 +1,13 @@
+.scroll-container {
+    width: 100%;          /* Set the width of the container */
+    height: 450px;        /* Set the height of the container */
+    overflow-y: auto;     /* Enable vertical scroll */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    padding: 10px;        /* Optional: Add some padding */
+}
+.content-container{
+    box-sizing: border-box;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    border-radius: 16px;
+    background: rgb(255, 255, 255);
+}
