@@ -79,7 +79,7 @@ donateMoneyButton3.addEventListener('click' , function(){
         openModal();
         }
         else{
-                window.alert( 'Not allowed');
+                window.alert( 'Donate-Bangladesh netlify.app says Invalid Donation amount');
         }
 
 });
@@ -99,19 +99,30 @@ const donationTab = document.getElementById('Donation-Tab');
         document.getElementById('main-tab').classList.add('hidden');
         document.getElementById('History-Bar').classList.remove('hidden');
 });
+donationTab.addEventListener('click' , function () {
+        donationTab.classList.add( 'bg-lime-600',
+        'btn-md', 'rounded-xl',  'm-2','font-bold'
+
+        );
+        historyTab.classList.remove(
+                'bg-lime-600',
+
+        )
+        document.getElementById('main-tab').classList.remove('hidden');
+})
 
 const historyItem = document.createElement("div");
 historyItem.className = 
 "bg-blue p-3 rounded";
 
 historyItem.innerHTML = `
-    <p>$${receivedMoney.toFixed(2)} taka is Donated for famine 2024 at Feni, Bangladesh.</p>
+    <p>$${receivedMoney.toFixed(2)} taka is Donated for famine 2024 at Noakhali, Bangladesh.</p>
     <p>${new Date().toLocaleDateString()}</p>
-    <p>$${receivedMoney2.toFixed(2)} taka is Donated for famine 2024 at Noakhali, Bangladesh.</p>
+    <p>$${receivedMoney2.toFixed(2)} taka is Donated for famine 2024 at feni, Bangladesh.</p>
     <p>${new Date().toLocaleDateString()}</p>
     <p>$${receivedMoney3.toFixed(2)} taka is Donated for Aid for Injured in the Quota Movement, Bangladesh.</p>
     <p>${new Date().toLocaleDateString()} ${new Date().toTimeString()}</p>
 `;
 const historyContainer = document .getElementById('history-list');
 
-historyContainer.appendChild()
+historyContainer.insertBefore(historyItem,historyContainer.firstChild);
