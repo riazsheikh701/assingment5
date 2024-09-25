@@ -81,16 +81,37 @@ donateMoneyButton3.addEventListener('click' , function(){
         else{
                 window.alert( 'Not allowed');
         }
-        
+
 });
 
-const historyTab = document.getElementById("history-tab");
-const donationTab = document.getElementById('donation-tab');
+const historyTab = document.getElementById("History-Tab");
+const donationTab = document.getElementById('Donation-Tab');
     historyTab.addEventListener('click' , function () {
         
-        historyTab.classList.add(
-            "bg-[#B4F461]",
-            'btn-md','rounded-xl','m-1','font-bold')
+        historyTab.classList.add( 'bg-lime-600',
+        'btn-md', 'rounded-xl',  'm-2','font-bold'
+
+        );
         donationTab.classList.remove(
-            'bg-[#B4F461]');
+                'bg-lime-600',
+        );
+
+        document.getElementById('main-tab').classList.add('hidden');
+        document.getElementById('History-Bar').classList.remove('hidden');
 });
+
+const historyItem = document.createElement("div");
+historyItem.className = 
+"bg-blue p-3 rounded";
+
+historyItem.innerHTML = `
+    <p>$${receivedMoney.toFixed(2)} taka is Donated for famine 2024 at Feni, Bangladesh.</p>
+    <p>${new Date().toLocaleDateString()}</p>
+    <p>$${receivedMoney2.toFixed(2)} taka is Donated for famine 2024 at Noakhali, Bangladesh.</p>
+    <p>${new Date().toLocaleDateString()}</p>
+    <p>$${receivedMoney3.toFixed(2)} taka is Donated for Aid for Injured in the Quota Movement, Bangladesh.</p>
+    <p>${new Date().toLocaleDateString()} ${new Date().toTimeString()}</p>
+`;
+const historyContainer = document .getElementById('history-list');
+
+historyContainer.appendChild()
